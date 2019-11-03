@@ -2,7 +2,7 @@
 " Filename:
 "   vimrc.vim
 "   This file config vim with basic options and plugins.
-"       
+"
 " Maintainer:
 "   Fang Xiaoliang - fangxlmr <fangxlmr@foxmail.com>
 "
@@ -100,7 +100,7 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 
-set autoindent "Auto indent 
+set autoindent "Auto indent
 set smartindent "Smart indent
 
 set softtabstop=4
@@ -168,7 +168,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""
 " => Misc
 """"""""""""""""""""""""""""""""""""""""
-" Find tag files up to root recursively 
+" Find tag files up to root recursively
 set tags=tags;/
 
 " Cscope config
@@ -186,6 +186,14 @@ if has("cscope")
     endif
     set csverb
 endif
+
+"Highlight trailing white spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""""""""""""
