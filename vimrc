@@ -90,24 +90,35 @@ set laststatus=2
 """"""""""""""""""""""""""""""""""""""""
 " => Text, tab and indentation related
 """"""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
+highlight SpecialKey ctermfg=red
+set list
+set listchars=tab:>-
+augroup default_filetype
+    autocmd!
+    " Default tab and indentation behavior
+    set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    set backspace=indent,eol,start
+    set autoindent
+augroup END
 
-" Be smart when using tabs
-set smarttab
+augroup config_filetype
+    autocmd!
+    " For yaml/toml
+    au BufNewFile,BufRead *.toml setf toml
+    autocmd FileType yaml,toml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    " For json
+    autocmd FileType json setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+augroup END
 
-" 1 tab == 4 spaces
-set tabstop=4
-set shiftwidth=4
-
-set autoindent "Auto indent
-set smartindent "Smart indent
-
-set softtabstop=4
-set backspace=indent,eol,start
-
-"C style indentation
-set cindent
+augroup lang_filetype
+    autocmd!
+    " For golang/python/rust
+    autocmd FileType go,python,rust setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    " For shell
+    autocmd FileType sh,zsh,csh setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    " For Makefile
+    autocmd FileType make setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""
 " => Visual mode related
