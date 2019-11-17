@@ -322,5 +322,8 @@ let g:NERDSpaceDelims = 1
 map <C-_> <plug>NERDCommenterComment
 map <C-\> <plug>NERDCommenterUncomment
 
+" Sugar for unix shell command
+Plug 'tpope/vim-eunuch'
+
 call plug#end()
 
