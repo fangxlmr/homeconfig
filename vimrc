@@ -315,6 +315,8 @@ let g:airline#extensions#ale#enabled = 1
 
 " Easy commenter
 Plug 'scrooloose/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
 " Use Ctrl+/ to comment and Ctrl-\ to uncomment.
 " Vim registers <C-/> as <C-_> for some reason.
 map <C-_> <plug>NERDCommenterComment
