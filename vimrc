@@ -128,6 +128,14 @@ augroup END
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>"
 
+" Shift lines with tab
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+
+" Stay selected after indentation is done
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 """"""""""""""""""""""""""""""""""""""""
 " => Moving around
 """"""""""""""""""""""""""""""""""""""""
