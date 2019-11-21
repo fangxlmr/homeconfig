@@ -220,6 +220,8 @@ call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""""""""""""
 " Code auto-completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-json'
+Plug 'neoclide/coc-yaml'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
