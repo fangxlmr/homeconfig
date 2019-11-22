@@ -248,6 +248,9 @@ endfunction
 " Rust-lang support
 Plug 'rust-lang/rust.vim'
 
+" Golang support
+Plug 'fatih/vim-go'
+
 """"""""""""""""""""""""""""""""""""""""
 " => User interface & Color scheme
 """"""""""""""""""""""""""""""""""""""""
